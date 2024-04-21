@@ -21,7 +21,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:4000/login",
+                "https://mern-authentication-phi.vercel.app/login",
                 {
                     ...inputValue,
                 },
