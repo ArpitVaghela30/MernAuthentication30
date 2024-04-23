@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
+const { PRODUCTION_URL } = process.env;
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
                 navigate("/login");
             }
             const { data } = await axios.post(
-                "https://mern-authentication-phi.vercel.app/",
+                PRODUCTION_URL,
                 {},
                 { withCredentials: true }
             );

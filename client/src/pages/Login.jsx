@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+const { PRODUCTION_URL } = process.env;
 
 const Login = () => {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "https://mern-authentication-phi.vercel.app/login",
+                PRODUCTION_URL + "login",
                 {
                     ...inputValue,
                 },
