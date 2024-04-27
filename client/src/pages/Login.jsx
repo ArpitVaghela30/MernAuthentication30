@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const { PRODUCTION_URL } = process.env;
-
+const { REACT_APP_PRODUCTION_URL } = process.env;
+debugger;
 const Login = () => {
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState({
@@ -22,7 +22,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                PRODUCTION_URL + "login",
+                REACT_APP_PRODUCTION_URL + "login",
                 {
                     ...inputValue,
                 },

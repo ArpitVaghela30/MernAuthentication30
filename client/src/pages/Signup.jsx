@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const { PRODUCTION_URL } = process.env;
+const { REACT_APP_PRODUCTION_URL } = process.env;
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                PRODUCTION_URL + "signup",
+                REACT_APP_PRODUCTION_URL + "signup",
                 {
                     ...inputValue,
                 },
